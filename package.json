@@ -1,8 +1,9 @@
 {
-  "name": "vue-template",
+  "name": "timesharesavings",
   "private": true,
+  
   "version": "0.0.0",
-  "homepage": "https://lunchtime52.github.io/Vue-Template-Project/",
+  "homepage": "https://switch-it-title-exchange.github.io/Timesharesavings/",
   "type": "module",
   "scripts": {
     "dev": "vite",

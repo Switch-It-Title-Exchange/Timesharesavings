@@ -5,7 +5,7 @@
         subtitle="Sample Subtitle"
         buttonText="Explore Now"
         buttonHref="Contact"
-        imageUrl="https://placehold.co/1600x900"
+        imageUrl="./src/assets/images/hero.jpg"
       />
     <BContainer class="section-padding">
       <ImageWithText

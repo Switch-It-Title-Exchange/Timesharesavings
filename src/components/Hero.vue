@@ -2,7 +2,7 @@
   <div
     :class="` bg-${background}  text-white hero text-center w-100`"
     :style="{
-      backgroundImage: `radial-gradient(closest-side, rgba(0, 0, 0, 0.7),transparent), url(${imageUrl}) `,
+      backgroundImage: `radial-gradient(farthest-corner, rgba(0, 0, 0, 0.8),transparent), url(${imageUrl}) `,
       height: '75vh',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
@@ -11,10 +11,10 @@
   >
     <div
       class="  d-flex flex-column justify-content-center align-items-center"
-      :style="{height:'75vh'}"
+      :style="{height:'70vh', padding: `${padding}rem`}"
     >
-      <h1 :class="`display-${titleScale}`">{{ title }}</h1>
-      <p v-if="subtitle" :class="`fs-${subtitleScale}`">{{ subtitle }}</p>
+      <h1 :class="`display-${titleScale}rem`">{{ title }}</h1>
+      <p v-if="subtitle" :class="`fs-${subtitleScale}rem`">{{ subtitle }}</p>
       <BButton
         v-if="buttonText"
         :variant="buttonVariant"

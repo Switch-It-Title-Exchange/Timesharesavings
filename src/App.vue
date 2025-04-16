@@ -1,6 +1,6 @@
 <template>
   <Navbar
-    logoText="My Awesome Site"
+    logoText="Timeshare Savings"
     :navLinks="[
       { text: 'Home', href: 'Home' },
       { text: 'About', href: 'About' },

@@ -1,5 +1,5 @@
 <template>
-  <BNavbar toggleable="md" :type="variant" :variant="color" class="px-4">
+  <BNavbar toggleable="md" :type="variant" :variant="color" class="px-4" sticky="top">
     <BNavbarBrand :to="{ name: logoHref }">{{ logoText }}</BNavbarBrand>
     <BNavbarToggle target="nav-collapse" />
     <BCollapse id="nav-collapse" is-nav>
@@ -22,7 +22,7 @@ export default {
     logoHref: { type: String, default: "Home" },
     navLinks: { type: Array, default: () => [] },
     variant: { type: String, default: "dark" },
-    color: { type: String, default: "info" },
+    color: { type: String, default: "primary" },
     base: { type: String, default: "/Vue-Template-Project" },
   },
 };
