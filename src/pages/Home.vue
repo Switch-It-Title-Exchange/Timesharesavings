@@ -1,11 +1,10 @@
 <template>
-  
     <Hero
         title="Welcome to Our Site!"
         subtitle="Sample Subtitle"
         buttonText="Explore Now"
         buttonHref="Contact"
-        imageUrl="./src/assets/images/hero.jpg"
+        :imageUrl="hero"
       />
     <BContainer class="section-padding">
       <ImageWithText
@@ -63,6 +62,7 @@
     import FeatureList from "../components/FeatureList.vue";
     import Gallery from "../components/Gallery.vue";
     import Testimonial from "../components/Testimonial.vue";
+    import { hero } from "../js/main.js"
     
     export default {
       components: {
@@ -73,5 +73,8 @@
         Gallery,
         Testimonial,
       },
+      data() {
+        return {hero}
+      }
     };
     </script>
