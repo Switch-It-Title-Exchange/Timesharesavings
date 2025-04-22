@@ -9,16 +9,8 @@
     <BCard-title :class="`fs-${titleScale}`">{{ title }}</BCard-title>
     <BCard-text :class="`fs-${textScale}`">{{ text }}</BCard-text>
     <slot></slot>
-    <BButton
-      v-if="buttonText && typeof buttonHref !== 'object'"
-      :variant="buttonVariant"
-    >
-      <a :href="buttonHref">{{ buttonText }}</a>
-    </BButton>
-    <BButton
-      v-else-if="buttonText && typeof buttonHref === 'object'"
-      :variant="buttonVariant"
-    >
+
+    <BButton v-if="buttonText" :variant="buttonVariant">
       <RouterLink :to="buttonHref">{{ buttonText }}</RouterLink>
     </BButton>
   </BCard>
@@ -27,8 +19,8 @@
     <BCard-title :class="`fs-${titleScale}`">{{ title }}</BCard-title>
     <BCard-text :class="`fs-${textScale}`">{{ text }}</BCard-text>
     <slot></slot>
-    <BButton v-if="buttonText" :variant="buttonVariant">
-      <a :href="buttonHref">{{ buttonText }}</a>
+    <BButton v-if="buttonText" :variant="buttonVariant" :to="buttonHref">
+      {{ buttonText }}
     </BButton>
   </BCard>
 </template>
@@ -43,8 +35,8 @@ const props = defineProps({
   imgAlt: { type: String, required: false },
   imgTop: { type: Boolean, default: false },
   buttonText: { type: String, required: false },
-  buttonVariant: { type: String, default: "success" },
-  buttonHref: { type: [String, Object], default: "NotFound" },
+  buttonVariant: { type: String, default: "primary" },
+  buttonHref: { type: Object, default: {name:"NotFound"} },
   titleScale: { type: Number, default: 4 },
   textScale: { type: Number, default: 5 },
   cardMargin: { type: String, default: "" },

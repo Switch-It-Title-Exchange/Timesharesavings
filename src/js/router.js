@@ -1,45 +1,42 @@
 import { createWebHistory, createRouter } from "vue-router";
 
-import Resort from "../pages/Resort.vue";
-import NotFound from "../pages/NotFound.vue";
-
-
-const base = '/Timesharesavings';
-
-
 function generateRoutes() {
   const pageFiles = import.meta.glob("/src/pages/*.vue");
   const routes = [];
+    for (const path in pageFiles) {
+    const componentName = path.split("/").pop().replace(".vue", "");
+    const routePath =
+      componentName === "Home" ? "/" : `/${componentName.toLowerCase()}`;
+    const name = componentName;
 
-  for (const path in pageFiles) {    
-    const componentName = path.split("/").pop().replace(".vue", "");    
-    const routePath = componentName === "Home" ? "/" : `/${componentName.toLowerCase()}`;
-
-    routes.push({      
-      path: base + routePath,
+    routes.push({
+      path: routePath,
       component: pageFiles[path],
-      name: componentName,
+      name: name,
     });
-  }
-  
-  routes.push({
-    path: "/resort/:resort_id",
-    component: Resort,
-    name: "ResortDetails",
-  });
-  routes.push({
-      path: "/:pathMatch(.*)*",      
-      name: "NotFound",      
-      component: NotFound,
-    });
+    }
 
+    
   return routes;
 }
+const basicRoutes = generateRoutes();
 
-const routes = generateRoutes();
-
+// Special routes defined explicitly
+const routes = [
+  ...basicRoutes,
+  {
+    path: "/resort/:resort_id",
+    component: () => import("../pages/Resort.vue"),
+    name: "ResortDetails",
+  },
+  {
+    path: "/:pathMatch(.*)*", 
+    component: () => import("../pages/NotFound.vue"),
+    name: "NotFound",
+  },
+];
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/timesharesavings/"),
   routes,
 });
 export default router;

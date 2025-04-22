@@ -1,13 +1,13 @@
 <template>
-    <Hero
-        title="Welcome to Our Site!"
-        subtitle="Sample Subtitle"
-        buttonText="Explore Now"
-        buttonHref="Resort"
-        :imageUrl="hero"
-      />
-    <BContainer class="section-padding">
-      <ImageWithText
+  <Hero
+    title="Welcome to Our Site!"
+    subtitle="Sample Subtitle"
+    buttonText="Explore Now"
+    buttonHref="Resort"
+    :imageUrl="hero"
+  />
+  <BContainer class="section-padding">
+    <ImageWithText
       imageUrl="https://placehold.co/800x400"
       title="Our Featured Product"
       text="This is a brief description of our featured product. It's awesome!"
@@ -16,7 +16,7 @@
     />
 
     <BRow mt-5 gap-4>
-      <BCol md=4 mb-md-4 v-for="resort in resorts" :key="resort.id">
+      <BCol md="4" mb-md-4 v-for="resort in resorts" :key="resort.id">
         <Card
           :title="resort.name"
           :text="resort.description"
@@ -24,22 +24,34 @@
           imgAlt="Card Image"
           cardMargin="mb-4"
           buttonText="Read More"
-          :buttonHref="{name: 'ResortDetails', params: { resort_id: resort.id }}"
-          
+          :buttonHref="{
+            name: 'ResortDetails',
+            params: { resort_id: resort.id },
+          }"
         />
       </BCol>
     </BRow>
+
     <FeatureList
+      title="Hot It Works"
+      text="Get your free timeshare today!"
       :features="[
-        { title: 'Feature 1', description: 'Description for Feature 1', icon:'bi-1-square'},
         {
-          title: 'Feature 2',
-          description: 'Description for Feature 2',
+          title: 'Find One',
+          description:
+            'Find a resort, week, or package. That you would like to enjoy.',
+          icon: 'bi-1-square',
+        },
+        {
+          title: 'Provide Info',
+          description:
+            'Provide the neccessary info so that we know what timeshare you would like and can get started with the transfer.',
           icon: 'bi-2-square',
         },
         {
-          title: 'Feature 3',
-          description: 'Description for Feature 3',
+          title: 'Transfer Process',
+          description:
+            'Usually the longest part of the process. This is where deeds are exacuted and transfer documents are signed and processed.',
           icon: 'bi-3-square',
         },
       ]"
@@ -60,6 +72,6 @@ import { hero } from "../js/main.js";
 import { resorts } from "../js/resorts.js";
 const resortsList = resorts;
 const heroImage = hero;
-console.log(hero);
-console.log(resorts);
+console.log(heroImage);
+console.log(resortsList);
 </script>

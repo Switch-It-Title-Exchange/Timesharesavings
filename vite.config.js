@@ -3,11 +3,9 @@ import vue from "@vitejs/plugin-vue";
 import Components from "unplugin-vue-components/vite";
 import { BootstrapVueNextResolver } from "bootstrap-vue-next";
 
-const base = "/Timesharesavings/";
-
 export default defineConfig(({ mode }) => {
   return {
-    base: base,
+    base: "/Timesharesavings/", // Centralized base path
     plugins: [
       vue(),
       Components({
