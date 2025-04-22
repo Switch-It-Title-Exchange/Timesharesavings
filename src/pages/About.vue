@@ -64,26 +64,10 @@
 </template>
 
 <script>
-import ImageWithText from "../components/ImageWithText.vue";
-import ContactForm from "../components/ContactForm.vue";
-import CallToAction from "../components/CallToAction.vue";
-import Card from "../components/Card.vue";
-import FeatureList from "../components/FeatureList.vue";
-import Gallery from "../components/Gallery.vue";
-import Hero from "../components/Hero.vue";
-import Testimonial from "../components/Testimonial.vue";
+
 
 export default {
-  components: {
-    ImageWithText,
-    ContactForm,
-    CallToAction,
-    Card,
-    FeatureList,
-    Gallery,
-    Hero,
-    Testimonial,
-  },
+
 };
 </script>
 

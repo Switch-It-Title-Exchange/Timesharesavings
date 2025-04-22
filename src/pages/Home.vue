@@ -3,7 +3,7 @@
         title="Welcome to Our Site!"
         subtitle="Sample Subtitle"
         buttonText="Explore Now"
-        buttonHref="Contact"
+        buttonHref="Resort"
         :imageUrl="hero"
       />
     <BContainer class="section-padding">
@@ -16,14 +16,15 @@
     />
 
     <BRow mt-5 gap-4>
-      <BCol md=4 mb-md-4 v-for="n in 6" :key="n">
+      <BCol md=4 mb-md-4 v-for="resort in resorts" :key="resort.id">
         <Card
-          title="Card Title"
-          text="Quick example text."
+          :title="resort.name"
+          :text="resort.description"
           imgSrc="https://placehold.co/300x200"
           imgAlt="Card Image"
           cardMargin="mb-4"
           buttonText="Read More"
+          :buttonHref="{name: 'ResortDetails', params: { resort_id: resort.id }}"
           
         />
       </BCol>
@@ -54,27 +55,11 @@
     />
   </BContainer>
 </template>
-
-    <script>
-    import Hero from "../components/Hero.vue";
-    import ImageWithText from "../components/ImageWithText.vue";
-    import Card from "../components/Card.vue";
-    import FeatureList from "../components/FeatureList.vue";
-    import Gallery from "../components/Gallery.vue";
-    import Testimonial from "../components/Testimonial.vue";
-    import { hero } from "../js/main.js"
-    
-    export default {
-      components: {
-        Hero,
-        ImageWithText,
-        Card,
-        FeatureList,
-        Gallery,
-        Testimonial,
-      },
-      data() {
-        return {hero}
-      }
-    };
-    </script>
+<script setup>
+import { hero } from "../js/main.js";
+import { resorts } from "../js/resorts.js";
+const resortsList = resorts;
+const heroImage = hero;
+console.log(hero);
+console.log(resorts);
+</script>

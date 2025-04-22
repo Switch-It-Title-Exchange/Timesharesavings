@@ -5,11 +5,12 @@
       { text: 'Home', href: 'Home' },
       { text: 'About', href: 'About' },
       { text: 'Contact', href: 'Contact' },
+      { text: 'Resorts', href: 'Resort' },
     ]"
   />
-  
-    <router-view></router-view>
-  
+
+  <router-view></router-view>
+
   <Footer
     :footerLinks="[
       // { text: 'Privacy', href: '/privacy' },
