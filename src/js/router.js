@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 
 import Resort from "../pages/Resort.vue";
+import NotFound from "../pages/NotFound.vue";
 
 
 const base = '/Timesharesavings';
@@ -14,8 +15,8 @@ function generateRoutes() {
     const componentName = path.split("/").pop().replace(".vue", "");    
     const routePath = componentName === "Home" ? "/" : `/${componentName.toLowerCase()}`;
 
-    routes.push({
-      path: routePath,
+    routes.push({      
+      path: base + routePath,
       component: pageFiles[path],
       name: componentName,
     });
@@ -28,8 +29,8 @@ function generateRoutes() {
   });
   routes.push({
       path: "/:pathMatch(.*)*",      
-      name: "NotFound",
-      component: () => import("/src/pages/NotFound.vue"),
+      name: "NotFound",      
+      component: NotFound,
     });
 
   return routes;
