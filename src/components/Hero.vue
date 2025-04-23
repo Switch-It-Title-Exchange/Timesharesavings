@@ -2,7 +2,7 @@
   <div
     :class="` bg-${background}  text-white hero text-center w-100`"
     :style="{
-      backgroundImage: `radial-gradient(farthest-corner, rgba(0, 0, 0, 0.8),transparent), url(${imageUrl}) `,
+      backgroundImage: `radial-gradient(farthest-corner, rgba(0, 0, 0, 1.2),rgba(0, 0, 0, .2)), url(${imageUrl}) `,
       height: '75vh',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',

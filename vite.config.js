@@ -5,7 +5,7 @@ import { BootstrapVueNextResolver } from "bootstrap-vue-next";
 
 export default defineConfig(({ mode }) => {
   return {
-    base: "/Timesharesavings/", // Centralized base path
+    base: mode === 'production' ? '/Timesharesavings/' : '/',
     plugins: [
       vue(),
       Components({

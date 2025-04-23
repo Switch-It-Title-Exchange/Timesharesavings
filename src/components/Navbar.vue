@@ -23,7 +23,7 @@ export default {
     navLinks: { type: Array, default: () => [] },
     variant: { type: String, default: "dark" },
     color: { type: String, default: "primary" },
-    base: { type: String, default: "/Vue-Template-Project" },
+    
   },
 };
 </script>

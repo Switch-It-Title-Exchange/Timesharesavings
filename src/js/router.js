@@ -35,8 +35,12 @@ const routes = [
     name: "NotFound",
   },
 ];
+
+const historyBase = import.meta.env.MODE === 'development' ? '/' : '/Timesharesavings/';
+
 const router = createRouter({
-  history: createWebHistory("/timesharesavings/"),
+
+  history: createWebHistory(historyBase),
   routes,
 });
 export default router;

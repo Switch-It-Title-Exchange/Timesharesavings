@@ -1,7 +1,7 @@
 <template>
   <Hero
-    title="Welcome to Our Site!"
-    subtitle="Sample Subtitle"
+    title="Unlock Your Dream Getaways: Discover Our Selection of Free Timeshares!"
+    subtitle="Tired of high timeshare maintenance fees? Explore our inventory of timeshare opportunities available for transfer – potentially saving you thousands!"
     buttonText="Explore Now"
     buttonHref="Resort"
     :imageUrl="hero"
